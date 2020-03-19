@@ -1,0 +1,8 @@
+
+.vs/
+/XiaoQi.Study.API/bin
+/XiaoQi.Study.API/obj
+/XiaoQi.Study.EF/bin
+/XiaoQi.Study.EF/obj
+
+*.user
