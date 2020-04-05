@@ -1,0 +1,279 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Repository\\XiaoQi.Study.Repository.csproj": {}
+  },
+  "projects": {
+    "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\XiaoQi.Study.EF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\XiaoQi.Study.EF.csproj",
+        "projectName": "XiaoQi.Study.EF",
+        "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\XiaoQi.Study.EF.csproj",
+        "packagesPath": "C:\\Users\\64231\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\64231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj",
+        "projectName": "XiaoQi.Study.IRepository",
+        "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj",
+        "packagesPath": "C:\\Users\\64231\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\64231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj": {
+                "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj",
+        "projectName": "XiaoQi.Study.Model",
+        "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj",
+        "packagesPath": "C:\\Users\\64231\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\64231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Repository\\XiaoQi.Study.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Repository\\XiaoQi.Study.Repository.csproj",
+        "projectName": "XiaoQi.Study.Repository",
+        "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Repository\\XiaoQi.Study.Repository.csproj",
+        "packagesPath": "C:\\Users\\64231\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\64231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\XiaoQi.Study.EF.csproj": {
+                "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.EF\\XiaoQi.Study.EF.csproj"
+              },
+              "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj": {
+                "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

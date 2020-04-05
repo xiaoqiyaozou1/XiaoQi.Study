@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.API", "XiaoQi.Study.API\XiaoQi.Study.API.csproj", "{81123E24-B30D-46B3-8125-0D7204A1FB71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiaoQi.Study.API", "XiaoQi.Study.API\XiaoQi.Study.API.csproj", "{81123E24-B30D-46B3-8125-0D7204A1FB71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.EF", "XiaoQi.Study.EF\XiaoQi.Study.EF.csproj", "{6F15FEE4-E3FB-470B-B4EF-05567CA6205B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiaoQi.Study.EF", "XiaoQi.Study.EF\XiaoQi.Study.EF.csproj", "{6F15FEE4-E3FB-470B-B4EF-05567CA6205B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.IRepository", "XiaoQi.Study.IRepository\XiaoQi.Study.IRepository.csproj", "{532B3270-B660-4198-83CF-A605DC6B05F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.Repository", "XiaoQi.Study.Repository\XiaoQi.Study.Repository.csproj", "{1C9664F1-B012-4FD7-A6B5-D0D1D87235E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.IService", "XiaoQi.Study.IService\XiaoQi.Study.IService.csproj", "{828915D3-89D7-47EB-BBEC-9370B7E96475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.Service", "XiaoQi.Study.Service\XiaoQi.Study.Service.csproj", "{4E8E94C5-D482-4098-85A1-52555B30950F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaoQi.Study.Model", "XiaoQi.Study.Model\XiaoQi.Study.Model.csproj", "{8CE8C786-168C-4693-A14C-C033DCAF1D70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,26 @@ Global
 		{6F15FEE4-E3FB-470B-B4EF-05567CA6205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F15FEE4-E3FB-470B-B4EF-05567CA6205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F15FEE4-E3FB-470B-B4EF-05567CA6205B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532B3270-B660-4198-83CF-A605DC6B05F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532B3270-B660-4198-83CF-A605DC6B05F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532B3270-B660-4198-83CF-A605DC6B05F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532B3270-B660-4198-83CF-A605DC6B05F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9664F1-B012-4FD7-A6B5-D0D1D87235E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9664F1-B012-4FD7-A6B5-D0D1D87235E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9664F1-B012-4FD7-A6B5-D0D1D87235E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9664F1-B012-4FD7-A6B5-D0D1D87235E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828915D3-89D7-47EB-BBEC-9370B7E96475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828915D3-89D7-47EB-BBEC-9370B7E96475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828915D3-89D7-47EB-BBEC-9370B7E96475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828915D3-89D7-47EB-BBEC-9370B7E96475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8E94C5-D482-4098-85A1-52555B30950F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8E94C5-D482-4098-85A1-52555B30950F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8E94C5-D482-4098-85A1-52555B30950F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8E94C5-D482-4098-85A1-52555B30950F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE8C786-168C-4693-A14C-C033DCAF1D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE8C786-168C-4693-A14C-C033DCAF1D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE8C786-168C-4693-A14C-C033DCAF1D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE8C786-168C-4693-A14C-C033DCAF1D70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

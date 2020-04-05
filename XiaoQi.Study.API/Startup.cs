@@ -142,10 +142,11 @@ namespace XiaoQi.Study.API
             //×¢²á¿çÓò
             services.AddCors(options =>
             {
+                string[] arr = { "http://192.168.1.3:9999", "http://localhost:8080" };
                 options.AddPolicy("XiaoQiAllowOrigins",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:8080")
+                    builder.WithOrigins(arr)
                             .AllowAnyHeader()
                             .AllowAnyMethod();
                 });
