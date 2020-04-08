@@ -23,12 +23,15 @@ namespace XiaoQi.Study.Repository
     public class BaseRepository<T> : IBaseRepository<T> where T : class, new()
     {
         private readonly MyContext _myContext;
-        public BaseRepository()
+        public BaseRepository(MyContext myContext)
         {
+            _myContext = myContext;
         }
-        public Task<bool> Add(T t)
+        public async Task<bool> Add(T t)
         {
-            throw new NotImplementedException();
+            await _myContext.AddAsync(t);
+            var res = await _myContext.SaveChangesAsync();
+            return res > 0;
         }
 
         public Task<bool> Delete(T t)

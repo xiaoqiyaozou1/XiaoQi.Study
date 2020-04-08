@@ -4,7 +4,11 @@ using System.Text;
 
 namespace XiaoQi.Study.Model
 {
-    class PageModel
+    public class PageModel
     {
+        public int PageIndex { get; set; } = 1;
+        public int PageSize { get; set; } = 5;
+
+        public int Total { get; set; }
     }
 }

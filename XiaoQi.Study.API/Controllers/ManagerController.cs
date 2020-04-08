@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using XiaoQi.Study.EF;
+using XiaoQi.Study.Model;
 
 namespace XiaoQi.Study.API.Controllers
 {

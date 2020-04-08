@@ -513,7 +513,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.2",
-          "System.ComponentModel.Annotations": "4.7.0"
+          "System.ComponentModel.Annotations": "4.7.0",
+          "XiaoQi.Study.Model": "1.0.0"
         },
         "compile": {
           "bin/placeholder/XiaoQi.Study.EF.dll": {}

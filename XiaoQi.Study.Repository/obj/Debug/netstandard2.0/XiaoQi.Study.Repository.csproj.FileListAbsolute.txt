@@ -1,0 +1,15 @@
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.Repository.deps.json
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.Repository.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.Repository.pdb
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.EF.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.IRepository.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.Model.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.EF.pdb
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.IRepository.pdb
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\bin\Debug\netstandard2.0\XiaoQi.Study.Model.pdb
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.csprojAssemblyReference.cache
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.AssemblyInfoInputs.cache
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.AssemblyInfo.cs
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.csproj.CopyComplete
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Repository\obj\Debug\netstandard2.0\XiaoQi.Study.Repository.pdb

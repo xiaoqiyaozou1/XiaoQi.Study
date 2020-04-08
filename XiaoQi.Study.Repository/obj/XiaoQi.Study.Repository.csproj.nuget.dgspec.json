@@ -31,7 +31,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj": {
+                "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

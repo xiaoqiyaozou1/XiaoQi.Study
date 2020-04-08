@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using XiaoQi.Study.Model;
 
 namespace XiaoQi.Study.IRepository
 {
-    interface IUserInfoRepository:IBaseRepository<UserInfo>
+    public interface IUserInfoRepository : IBaseRepository<UserInfo>
     {
+        Task<UserInfo> GetUserInfoByCountAndPwd(string count, string pwd);
     }
 }

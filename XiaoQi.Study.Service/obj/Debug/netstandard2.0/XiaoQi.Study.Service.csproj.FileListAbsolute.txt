@@ -1,0 +1,8 @@
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\bin\Debug\netstandard2.0\XiaoQi.Study.Service.deps.json
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\bin\Debug\netstandard2.0\XiaoQi.Study.Service.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\bin\Debug\netstandard2.0\XiaoQi.Study.Service.pdb
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\obj\Debug\netstandard2.0\XiaoQi.Study.Service.csprojAssemblyReference.cache
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\obj\Debug\netstandard2.0\XiaoQi.Study.Service.AssemblyInfoInputs.cache
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\obj\Debug\netstandard2.0\XiaoQi.Study.Service.AssemblyInfo.cs
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\obj\Debug\netstandard2.0\XiaoQi.Study.Service.dll
+D:\Code\Project\XiaoQi.Study\XiaoQi.Study.Service\obj\Debug\netstandard2.0\XiaoQi.Study.Service.pdb

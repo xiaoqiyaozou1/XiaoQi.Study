@@ -4,7 +4,12 @@ using System.Text;
 
 namespace XiaoQi.Study.Model
 {
-    class RoleInfo
+    public class RoleInfo
     {
+        public string RoleId { get; set; }
+        public string Role { get; set; }
+
+        public string Des { get; set; }
+        public DateTime SetTime { get; set; }
     }
 }

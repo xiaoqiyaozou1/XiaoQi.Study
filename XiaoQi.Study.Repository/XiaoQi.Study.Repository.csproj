@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XiaoQi.Study.EF\XiaoQi.Study.EF.csproj" />
+    <ProjectReference Include="..\XiaoQi.Study.IRepository\XiaoQi.Study.IRepository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using XiaoQi.Study.API.AuthHelper;
 using XiaoQi.Study.EF;
+using XiaoQi.Study.Model;
 
 namespace XiaoQi.Study.API
 {
