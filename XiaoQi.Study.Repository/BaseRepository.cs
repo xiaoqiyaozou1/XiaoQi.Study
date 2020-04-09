@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using XiaoQi.Study.EF;
@@ -27,26 +30,74 @@ namespace XiaoQi.Study.Repository
         {
             _myContext = myContext;
         }
+
+        /// <summary>
+        /// 添加实体
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
         public async Task<bool> Add(T t)
         {
-            await _myContext.AddAsync(t);
+            await _myContext.Set<T>().AddAsync(t);
             var res = await _myContext.SaveChangesAsync();
             return res > 0;
         }
-
-        public Task<bool> Delete(T t)
+        /// <summary>
+        /// 删除实体
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public async Task<bool> Delete(T t)
         {
-            throw new NotImplementedException();
+            _myContext.Set<T>().Remove(t);
+            return await _myContext.SaveChangesAsync() > 0;
+
+        }
+        /// <summary>
+        /// 得到分页的数据
+        /// </summary>
+        /// <typeparam name="S"></typeparam>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="total"></param>
+        /// <param name="whereLambda"></param>
+        /// <param name="orderByLambda"></param>
+        /// <param name="isAsc"></param>
+        /// <returns></returns>
+        public IQueryable<T> GetPageInfos<S>(int pageIndex, int pageSize, out int total, Expression<Func<T, bool>> whereLambda, Expression<Func<T, S>> orderByLambda,
+                                                    bool isAsc)
+        {
+            total = _myContext.Set<T>().Where(whereLambda).Count();
+            if (isAsc)
+            {
+                var res = _myContext.Set<T>()
+                    .Where(whereLambda)
+                    .OrderBy<T, S>(orderByLambda)
+                    .Skip(pageSize * (pageIndex - 1))
+                    .Take(pageSize).AsQueryable();
+                return res;
+            }
+            else
+            {
+                var res = _myContext.Set<T>()
+                          .Where(whereLambda)
+                          .OrderBy<T, S>(orderByLambda)
+                          .Skip(pageSize * (pageIndex - 1))
+                          .Take(pageSize).AsQueryable();
+                return res;
+            }
+
+
         }
 
-        public System.Linq.IQueryable<T> GetPageInfos<S>(int pageIndex, int pageSize, out int total, System.Linq.Expressions.Expression<Func<T, bool>> whereLambda)
+        /// <summary>
+        /// 异步查询到一个表的所有数据
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<T>> QueryAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<T>> Query()
-        {
-            throw new NotImplementedException();
+            var res = await _myContext.Set<T>().ToListAsync();
+            return res;
         }
 
         public Task<List<T>> Query(string where)
@@ -54,19 +105,36 @@ namespace XiaoQi.Study.Repository
             throw new NotImplementedException();
         }
 
-        public Task<T> QueryById(object id)
+        /// <summary>
+        /// 根据ID 查询到实体的数据
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<T> QueryById(object id)
         {
-            throw new NotImplementedException();
+            var res = await _myContext.Set<T>().FindAsync(id);
+            return res;
+        }
+        /// <summary>
+        /// 根据linq表达式查询树
+        /// </summary>
+        /// <param name="whereExpression"></param>
+        /// <returns></returns>
+        public async Task<T> QueryByWhereAsync(Expression<Func<T, bool>> whereExpression)
+        {
+            var res = await _myContext.Set<T>().Where(whereExpression).FirstOrDefaultAsync();
+            return res;
         }
 
-        public Task<T> QueryByWhere(string where)
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public async Task<bool> Update(T t)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> Update(T t)
-        {
-            throw new NotImplementedException();
+            _myContext.Set<T>().Update(t);
+            return await _myContext.SaveChangesAsync() > 0;
         }
     }
 }

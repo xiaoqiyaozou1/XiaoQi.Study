@@ -8,6 +8,6 @@ namespace XiaoQi.Study.IRepository
 {
     public interface IUserInfoRepository : IBaseRepository<UserInfo>
     {
-        Task<UserInfo> GetUserInfoByCountAndPwd(string count, string pwd);
+        Task<UserInfo> GetUserInfoByCountAndPwdAsync(string count, string pwd);
     }
 }

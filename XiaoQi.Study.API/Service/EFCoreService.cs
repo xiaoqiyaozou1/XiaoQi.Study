@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -143,9 +144,6 @@ namespace XiaoQi.Study.API
 
         #endregion
         #region RoleInfo_CRUD
-
-        #endregion
-
         public IQueryable<RoleInfo> GetRolPageEnties(int pageSize, int pageIndex, out int total, bool isAsc)
         {
             total = _myContext.Set<RoleInfo>().Count();
@@ -194,6 +192,9 @@ namespace XiaoQi.Study.API
         {
             return _myContext.RoleInfos.Find(roleId);
         }
+        #endregion
+
+
 
         public IEnumerable<MenuInfo> GetAllMenuInfo()
         {
