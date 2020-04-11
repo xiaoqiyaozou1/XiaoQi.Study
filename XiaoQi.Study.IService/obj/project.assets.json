@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "XiaoQi.Study.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/XiaoQi.Study.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XiaoQi.Study.Model.dll": {}
+        }
       }
     }
   },
@@ -171,11 +181,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "XiaoQi.Study.Model/1.0.0": {
+      "type": "project",
+      "path": "../XiaoQi.Study.Model/XiaoQi.Study.Model.csproj",
+      "msbuildProject": "../XiaoQi.Study.Model/XiaoQi.Study.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "XiaoQi.Study.Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -210,7 +226,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj": {
+              "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

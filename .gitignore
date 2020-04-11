@@ -4,5 +4,16 @@
 /XiaoQi.Study.API/obj
 /XiaoQi.Study.EF/bin
 /XiaoQi.Study.EF/obj
-
+/XiaoQi.Study.IRepository/bin
+/XiaoQi.Study.IService/bin
+/XiaoQi.Study.IRepository/obj
+/XiaoQi.Study.IService/obj
+/XiaoQi.Study.Repository/bin
+/XiaoQi.Study.Service/bin
+/XiaoQi.Study.Repository/obj
+/XiaoQi.Study.Service/obj
+/XiaoQi.Study.Model/bin
+/XiaoQi.Study.Model/obj
 *.user
+
+*.log

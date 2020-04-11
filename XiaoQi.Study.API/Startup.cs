@@ -24,6 +24,10 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using XiaoQi.Study.API.Filter;
+using XiaoQi.Study.IService;
+using XiaoQi.Study.Service;
+using XiaoQi.Study.Repository;
+using XiaoQi.Study.IRepository;
 
 namespace XiaoQi.Study.API
 {
@@ -42,17 +46,20 @@ namespace XiaoQi.Study.API
         public void ConfigureServices(IServiceCollection services)
         {
             //注册控制器 并追加控制的全局过滤
-            services.AddControllers(o=>
+            services.AddControllers(o =>
             {
                 o.Filters.Add(typeof(GlobalExceptionFilter));
             });
 
-
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
             //注册EF 上下文
-            services.AddDbContext<MyContext>(
-                o => o.UseSqlite(@"Data Source=D:\Code\Project\XiaoQi.Study\XiaoQi.Study.API\DB\userinfo.db")
-           );
+            // services.AddDbContext<MyContext>(
+            //     o => o.UseSqlite(@"Data Source=D:\Code\Project\XiaoQi.Study\XiaoQi.Study.API\DB\userinfo.db")
+            //);
 
+            services.AddDbContext<MyContext>(
+            o => o.UseSqlite(@"Data Source="+ basePath + "userinfo.db")
+       );
             //Swagger 相关注册
             services.AddSwaggerGen(c =>
             {
@@ -67,6 +74,22 @@ namespace XiaoQi.Study.API
             //注册封装好的EFCoreService
             services.AddScoped<IEFCoreService, EFCoreService>();
 
+            #region 注册所有得数据服务
+            services.AddTransient<IMenuButtonRepository, MenuButtonRepository>();
+            services.AddTransient<IMenuInfoRepository, MenuInfoRepository>();
+            services.AddTransient<IRoleInfoRepository, RoleInfoRepository>();
+            services.AddTransient<IRoleMenuRepository, RoleMenuRepository>();
+            services.AddTransient<IUserInfoRepository, UserInfoRepository>();
+            services.AddTransient<IUserRoleRepository, UserRoleRepository>();
+
+            services.AddTransient<IMenuButtonService, MenuButtonService>();
+            services.AddTransient<IMenuInfoService, MenuInfoService>();
+            services.AddTransient<IRoleInfoService, RoleInfoService>();
+            services.AddTransient<IRoleMenuService, RoleMenuService>();
+            services.AddTransient<IUserInfoService, UserInfoService>();
+            services.AddTransient<IUserRoleService, UserRoleService>();
+            #endregion
+
             //注册此接口，给JwtAuthorizationHandler.cs 用
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -76,7 +99,7 @@ namespace XiaoQi.Study.API
             var jwtKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("xiaoqiyaozouxiaoqiyaozouxiaoqiyaozou"));//加密验证的key         
             var jwtCreds = new SigningCredentials(jwtKey, SecurityAlgorithms.HmacSha256); //根据key' 生成的标识
             var jwtUserRoleInofs = new List<JwtUserRoleInfo>();//用户角色和用户拥有的api 集合 ，该角色只能访问其拥有的api   
-            
+
             var jwtRequirement = new JwtAuthorizationRequirement(
                 jwtUserRoleInofs,
                 "",
@@ -110,7 +133,8 @@ namespace XiaoQi.Study.API
             };
 
             // 开启Bearer认证
-            services.AddAuthentication(o => {
+            services.AddAuthentication(o =>
+            {
                 o.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 o.DefaultChallengeScheme = nameof(ApiResponseHandler);
                 o.DefaultForbidScheme = nameof(ApiResponseHandler);

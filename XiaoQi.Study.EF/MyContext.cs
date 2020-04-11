@@ -48,7 +48,8 @@ namespace XiaoQi.Study.EF
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite(@"Data Source=D:\Code\Project\XiaoQi.Study\XiaoQi.Study.API\DB\userinfo.db");
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+            options.UseSqlite(@"Data Source=" + basePath + "userinfo.db");
         }
     }
 }

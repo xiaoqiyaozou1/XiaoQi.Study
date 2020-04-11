@@ -25,6 +25,42 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "XiaoQi.Study.IRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "XiaoQi.Study.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/XiaoQi.Study.IRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XiaoQi.Study.IRepository.dll": {}
+        }
+      },
+      "XiaoQi.Study.IService/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "XiaoQi.Study.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/XiaoQi.Study.IService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XiaoQi.Study.IService.dll": {}
+        }
+      },
+      "XiaoQi.Study.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/XiaoQi.Study.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XiaoQi.Study.Model.dll": {}
+        }
       }
     }
   },
@@ -171,11 +207,28 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "XiaoQi.Study.IRepository/1.0.0": {
+      "type": "project",
+      "path": "../XiaoQi.Study.IRepository/XiaoQi.Study.IRepository.csproj",
+      "msbuildProject": "../XiaoQi.Study.IRepository/XiaoQi.Study.IRepository.csproj"
+    },
+    "XiaoQi.Study.IService/1.0.0": {
+      "type": "project",
+      "path": "../XiaoQi.Study.IService/XiaoQi.Study.IService.csproj",
+      "msbuildProject": "../XiaoQi.Study.IService/XiaoQi.Study.IService.csproj"
+    },
+    "XiaoQi.Study.Model/1.0.0": {
+      "type": "project",
+      "path": "../XiaoQi.Study.Model/XiaoQi.Study.Model.csproj",
+      "msbuildProject": "../XiaoQi.Study.Model/XiaoQi.Study.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "XiaoQi.Study.IRepository >= 1.0.0",
+      "XiaoQi.Study.IService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -210,7 +263,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj": {
+              "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IRepository\\XiaoQi.Study.IRepository.csproj"
+            },
+            "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IService\\XiaoQi.Study.IService.csproj": {
+              "projectPath": "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IService\\XiaoQi.Study.IService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

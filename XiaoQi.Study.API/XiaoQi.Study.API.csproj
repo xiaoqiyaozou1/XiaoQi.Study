@@ -23,6 +23,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XiaoQi.Study.EF\XiaoQi.Study.EF.csproj" />
+    <ProjectReference Include="..\XiaoQi.Study.IService\XiaoQi.Study.IService.csproj" />
+    <ProjectReference Include="..\XiaoQi.Study.Repository\XiaoQi.Study.Repository.csproj" />
+    <ProjectReference Include="..\XiaoQi.Study.Service\XiaoQi.Study.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using XiaoQi.Study.Model;
 
-namespace XiaoQi.Study.IRepository
+namespace XiaoQi.Study.IService
 {
-    public interface IRoleMenuRepository : IBaseRepository<RoleMenu_R>
+    public interface IUserRoleService : IBaseService<UserRole_R>
     {
     }
 }
