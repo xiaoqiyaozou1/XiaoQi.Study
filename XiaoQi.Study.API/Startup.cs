@@ -166,7 +166,7 @@ namespace XiaoQi.Study.API
             //×¢²á¿çÓò
             services.AddCors(options =>
             {
-                string[] arr = { "http://192.168.1.3:9999", "http://localhost:8080" };
+                string[] arr = { "http://192.168.1.3:9999", "http://localhost:8080", "http://152.136.33.250:6004" };
                 options.AddPolicy("XiaoQiAllowOrigins",
                 builder =>
                 {

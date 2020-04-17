@@ -19,6 +19,24 @@ namespace XiaoQi.Study.Service
             this._baseRepository = _mneuInfoRepository;
         }
 
+        public async Task<List<MenuInfo>> GetMenus(string menuIds)
+        {
+            List<MenuInfo> menuInfos = new List<MenuInfo>();
+            string[] arr = menuIds.Split(',');
+            if (arr.Length > 0)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    var tmpData = await _mneuInfoRepository.QueryById(arr[i]);
+                    if (tmpData != null)
+                    {
+                        menuInfos.Add(tmpData);
+                    }
+                }
+            }
+            return menuInfos;
+        }
+
         public async Task<List<MenuDTO>> GetMenuTree()
         {
             var menuInfos = await _mneuInfoRepository.QueryAsync();

@@ -14,7 +14,7 @@ namespace XiaoQi.Study.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("MyPolicy")]
+    [Authorize("MyPolicy")]
     public class ManagerController : ControllerBase
     {
         private readonly ILogger<ManagerController> _logger;
@@ -286,6 +286,20 @@ namespace XiaoQi.Study.API.Controllers
 
             return new JsonResult(new Result { Data = res, Msg = "成功获取菜单信息", Status = 200 });
         }
+
+        [HttpGet]
+        [Route("GetMenusByQueryInfo")]
+        public IActionResult GetMenuInfosByQueryInfo(int pageSize, int pageIndex)
+        {
+            int total = 0;
+  
+
+            var menuData =  _menuInfoService.GetPageInfos(pageIndex, pageSize, out total, o => o.FatherId == o.FatherId, o => o.FatherId, true);
+            var res = new { menuData, total };
+
+            return new JsonResult(new Result { Data = res, Msg = "获取菜单信息成功", Status = 200 });
+        }
+
         /// <summary>
         /// 得到整个菜单树 2020 0412
         /// </summary>
@@ -308,11 +322,14 @@ namespace XiaoQi.Study.API.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("AddMenuInfo")]
-        public IActionResult AddMenuInfo(MenuInfo menuInfo)
+        public async Task<IActionResult> AddMenuInfo(MenuInfo menuInfo)
         {
             menuInfo.MenuInfoId = Guid.NewGuid().ToString();
             menuInfo.SetTime = DateTime.Now;
-            var res = _EFCoreService.AddMenuInfo(menuInfo);
+
+
+            // var res = _EFCoreService.AddMenuInfo(menuInfo);
+            var res = await _menuInfoService.Add(menuInfo);
 
             return new JsonResult(new Result { Data = res, Msg = "成功添加菜单信息", Status = 200 });
         }
@@ -323,10 +340,11 @@ namespace XiaoQi.Study.API.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("DeleteMenuInfo")]
-        public IActionResult DeleteMenuInfo(string menuInfoId)
+        public async Task<IActionResult> DeleteMenuInfo(string menuInfoId)
         {
-            var res = _EFCoreService.DeleteMenuInfo(menuInfoId);
-
+            //v ar res = _EFCoreService.DeleteMenuInfo(menuInfoId);
+            var menuInfo = await _menuInfoService.QueryById(menuInfoId);
+            var res = await _menuInfoService.Delete(menuInfo);
             return new JsonResult(new Result { Data = res, Msg = $"菜单信息删除{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
         }
         /// <summary>
@@ -336,10 +354,10 @@ namespace XiaoQi.Study.API.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("UpdateMenuInfo")]
-        public IActionResult UpdateMenuInfo(MenuInfo menuInfo)
+        public async Task<IActionResult> UpdateMenuInfo(MenuInfo menuInfo)
         {
-            var res = _EFCoreService.UpdateMenuInfo(menuInfo);
-
+            // var res = _EFCoreService.UpdateMenuInfo(menuInfo);
+            var res = await _menuInfoService.Update(menuInfo);
             return new JsonResult(new Result { Data = res, Msg = $"菜单信息更新{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
         }
         #endregion
@@ -347,23 +365,24 @@ namespace XiaoQi.Study.API.Controllers
         #region 用户角色
         [HttpPost]
         [Route("SetUserRole")]
-        public IActionResult SetUserRole(UserRole_R userRole)
+        public async Task<IActionResult> SetUserRole(UserRole_R userRole)
         {
-            var tmpData = _EFCoreService.GetUserRoleByUserId(userRole.UserId);
+            // var tmpData = _EFCoreService.GetUserRoleByUserId(userRole.UserId);
+            var tmpData = await _userRoleService.QueryById(userRole.UserId);
             if (tmpData != null)
             {
                 tmpData.SetTime = DateTime.Now;
                 tmpData.RoleId = userRole.RoleId;
-                var res = _EFCoreService.UpdateUserRole(tmpData);
-
+                // var res = _EFCoreService.UpdateUserRole(tmpData);
+                var res = await _userRoleService.Update(tmpData);
                 return new JsonResult(new Result { Data = res, Msg = $"设置{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
             }
             else
             {
                 userRole.UserRoleId = Guid.NewGuid().ToString();
                 userRole.SetTime = DateTime.Now;
-                var res = _EFCoreService.SetUserRole(userRole);
-
+                // var res = _EFCoreService.SetUserRole(userRole);
+                var res = await _userRoleService.Add(userRole);
                 return new JsonResult(new Result { Data = res, Msg = $"设置{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
             }
 
@@ -379,9 +398,13 @@ namespace XiaoQi.Study.API.Controllers
         }
         [HttpDelete]
         [Route("DeleteUserRole")]
-        public IActionResult DeleteUserRole(string userRoleId)
+        public async Task<IActionResult> DeleteUserRole(string userRoleId)
         {
-            var res = _EFCoreService.DeleteUserRoleById(userRoleId);
+
+            //var res = _EFCoreService.DeleteUserRoleById(userRoleId);
+            var userRole = await _userRoleService.QueryById(userRoleId);
+            var res = await _userRoleService.Delete(userRole);
+
             return new JsonResult(new Result { Data = res, Msg = $"删除{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
         }
         #endregion
@@ -389,14 +412,15 @@ namespace XiaoQi.Study.API.Controllers
         #region 角色菜单 
         [HttpPost]
         [Route("SetRoleMenu")]
-        public IActionResult SetRoleMenu(RoleMenu_R roleMenu)
+        public async Task<IActionResult> SetRoleMenu(RoleMenu_R roleMenu)
         {
-            var tmpData = _EFCoreService.GetRoleMenuByRoleId(roleMenu.RoleId);
+            // var tmpData = _EFCoreService.GetRoleMenuByRoleId(roleMenu.RoleId);
+            var tmpData = await _roleMenuService.QueryById(roleMenu.RoleId);
             if (tmpData != null)
             {
                 tmpData.SetTime = DateTime.Now;
                 tmpData.MenuInfoId = roleMenu.MenuInfoId;
-                var res = _EFCoreService.UpdateRoleMenu(tmpData);
+                var res = await _roleMenuService.Update(tmpData);
 
                 return new JsonResult(new Result { Data = res, Msg = $"设置{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
             }
@@ -404,21 +428,22 @@ namespace XiaoQi.Study.API.Controllers
             {
                 roleMenu.RoleMenuId = Guid.NewGuid().ToString();
                 roleMenu.SetTime = DateTime.Now;
-                var res = _EFCoreService.SetRoleMenu(roleMenu);
-
+                //var res = _EFCoreService.SetRoleMenu(roleMenu);
+                var res = await _roleMenuService.Add(roleMenu);
                 return new JsonResult(new Result { Data = res, Msg = $"设置{(res ? "成功" : "失败")}", Status = res ? 200 : 204 });
             }
         }
 
         [HttpGet]
         [Route("GetRoleMenusByRoleId")]
-        public IActionResult GetRoleMenusByRoleId(string roleId)
+        public async Task<IActionResult> GetRoleMenusByRoleId(string roleId)
         {
-            var roleMenu = _EFCoreService.GetRoleMenuByRoleId(roleId);
+            // var roleMenu = _EFCoreService.GetRoleMenuByRoleId(roleId);
+            var roleMenu = await _roleMenuService.QueryByWhereAsync(o => o.RoleId == roleId);
             if (roleMenu != null)
             {
                 string menuIds = roleMenu.MenuInfoId;
-                var res = _EFCoreService.GetRoleMenus(menuIds);
+                var res =await _menuInfoService.GetMenus(menuIds);
 
                 return new JsonResult(new Result { Data = res, Msg = "获取成功", Status = 200 });
             }

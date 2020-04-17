@@ -66,6 +66,11 @@
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.IService\\XiaoQi.Study.IService.csproj": {
@@ -130,6 +135,11 @@
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "D:\\Code\\Project\\XiaoQi.Study\\XiaoQi.Study.Model\\XiaoQi.Study.Model.csproj": {
@@ -189,6 +199,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     },
@@ -256,6 +271,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

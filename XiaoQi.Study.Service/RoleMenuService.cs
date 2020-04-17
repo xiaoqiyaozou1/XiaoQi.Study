@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using XiaoQi.Study.IRepository;
 using XiaoQi.Study.IService;
 using XiaoQi.Study.Model;
@@ -15,6 +17,8 @@ namespace XiaoQi.Study.Service
             _roleMenuRepository = roleMenuRepository;
             this._baseRepository = _roleMenuRepository;
         }
+
+
 
         public override void SetBaseRepository()
         {

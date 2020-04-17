@@ -10,5 +10,7 @@ namespace XiaoQi.Study.IService
     public interface IMenuInfoService : IBaseService<MenuInfo>
     {
         Task<List<MenuDTO>> GetMenuTree();
+
+        Task<List<MenuInfo>> GetMenus(string menuIds);
     }
 }
