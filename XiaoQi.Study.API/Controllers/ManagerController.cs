@@ -14,7 +14,7 @@ namespace XiaoQi.Study.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize("MyPolicy")]
+   /// [Authorize("MyPolicy")]
     public class ManagerController : ControllerBase
     {
         private readonly ILogger<ManagerController> _logger;
