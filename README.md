@@ -11,5 +11,3 @@ master 分支
 9、跨域设置    
 
 
-注意事项：种子数据导入这个还没研究，所以直接将API DB 文件   
-下的usrinfo.db 复制到XiaoQi.Study\XiaoQi.Study.API\bin\Debug\netcoreapp3.1目录下就可以直接使用了
