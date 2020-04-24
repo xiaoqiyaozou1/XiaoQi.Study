@@ -28,6 +28,7 @@ using XiaoQi.Study.IService;
 using XiaoQi.Study.Service;
 using XiaoQi.Study.Repository;
 using XiaoQi.Study.IRepository;
+using Autofac;
 
 namespace XiaoQi.Study.API
 {
@@ -75,19 +76,19 @@ namespace XiaoQi.Study.API
             services.AddScoped<IEFCoreService, EFCoreService>();
 
             #region 注册所有得数据服务
-            services.AddTransient<IMenuButtonRepository, MenuButtonRepository>();
-            services.AddTransient<IMenuInfoRepository, MenuInfoRepository>();
-            services.AddTransient<IRoleInfoRepository, RoleInfoRepository>();
-            services.AddTransient<IRoleMenuRepository, RoleMenuRepository>();
-            services.AddTransient<IUserInfoRepository, UserInfoRepository>();
-            services.AddTransient<IUserRoleRepository, UserRoleRepository>();
+            //services.AddTransient<IMenuButtonRepository, MenuButtonRepository>();
+            //services.AddTransient<IMenuInfoRepository, MenuInfoRepository>();
+            //services.AddTransient<IRoleInfoRepository, RoleInfoRepository>();
+            //services.AddTransient<IRoleMenuRepository, RoleMenuRepository>();
+            //services.AddTransient<IUserInfoRepository, UserInfoRepository>();
+            //services.AddTransient<IUserRoleRepository, UserRoleRepository>();
 
-            services.AddTransient<IMenuButtonService, MenuButtonService>();
-            services.AddTransient<IMenuInfoService, MenuInfoService>();
-            services.AddTransient<IRoleInfoService, RoleInfoService>();
-            services.AddTransient<IRoleMenuService, RoleMenuService>();
-            services.AddTransient<IUserInfoService, UserInfoService>();
-            services.AddTransient<IUserRoleService, UserRoleService>();
+            //services.AddTransient<IMenuButtonService, MenuButtonService>();
+            //services.AddTransient<IMenuInfoService, MenuInfoService>();
+            //services.AddTransient<IRoleInfoService, RoleInfoService>();
+            //services.AddTransient<IRoleMenuService, RoleMenuService>();
+            //services.AddTransient<IUserInfoService, UserInfoService>();
+            //services.AddTransient<IUserRoleService, UserRoleService>();
             #endregion
 
             //注册此接口，给JwtAuthorizationHandler.cs 用
@@ -166,7 +167,8 @@ namespace XiaoQi.Study.API
             //注册跨域
             services.AddCors(options =>
             {
-                string[] arr = { "http://192.168.1.3:9999", "http://localhost:8080", "http://152.136.33.250:6004" };
+                string[] arr1 = { "http://192.168.1.3:9999", "http://localhost:8080", "http://152.136.33.250:6004" };
+                string[] arr = Configuration["OriginSetting"].Split(','); //{ "http://192.168.1.3:9999", "http://localhost:8080", "http://152.136.33.250:6004" };
                 options.AddPolicy("XiaoQiAllowOrigins",
                 builder =>
                 {
@@ -176,6 +178,23 @@ namespace XiaoQi.Study.API
                 });
             });
 
+        }
+        //Autofac容器
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+
+            builder.RegisterType<MenuButtonRepository>().As<IMenuButtonRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<MenuInfoRepository>().As<IMenuInfoRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleInfoRepository>().As<IRoleInfoRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleMenuRepository>().As<IRoleMenuRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<UserInfoRepository>().As<IUserInfoRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<UserRoleRepository>().As<IUserRoleRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<MenuButtonService>().As<IMenuButtonService>().InstancePerLifetimeScope();
+            builder.RegisterType<MenuInfoService>().As<IMenuInfoService>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleInfoService>().As<IRoleInfoService>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleMenuService>().As<IRoleMenuService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserInfoService>().As<IUserInfoService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserRoleService>().As<IUserRoleService>().InstancePerLifetimeScope();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

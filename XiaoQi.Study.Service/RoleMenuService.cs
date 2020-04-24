@@ -18,7 +18,10 @@ namespace XiaoQi.Study.Service
             this._baseRepository = _roleMenuRepository;
         }
 
-
+        public async Task<RoleMenu_R> GetRoleMenusByRoleId(string roleId)
+        {
+            return await _roleMenuRepository.GetRoleMenusByRoleId(roleId);
+        }
 
         public override void SetBaseRepository()
         {

@@ -11,3 +11,5 @@ master 分支
 9、跨域设置    
 
 
+autofac.study 分支  
+1.autofac 第三方容器得使用

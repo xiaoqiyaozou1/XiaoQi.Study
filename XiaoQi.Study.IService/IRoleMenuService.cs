@@ -9,5 +9,6 @@ namespace XiaoQi.Study.IService
 {
     public interface IRoleMenuService : IBaseService<RoleMenu_R>
     {
+        Task<RoleMenu_R> GetRoleMenusByRoleId(string roleId);
     }
 }
