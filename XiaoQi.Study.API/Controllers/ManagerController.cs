@@ -14,7 +14,7 @@ namespace XiaoQi.Study.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   /// [Authorize("MyPolicy")]
+    [Authorize("MyPolicy")]
     public class ManagerController : ControllerBase
     {
         private readonly ILogger<ManagerController> _logger;
@@ -94,7 +94,7 @@ namespace XiaoQi.Study.API.Controllers
         {
             int total = 0;
 
-            var pageInfo = _userInfoService.GetPageInfos(pageIndex, pageSize, out total, o => o.SetTime == o.SetTime, o => o.SetTime, true);
+            var pageInfo = _userInfoService.GetUserInfoPageInfos(pageIndex, pageSize, out total, o => o.SetTime == o.SetTime, o => o.SetTime, true);
 
             //var pageData = _EFCoreService.GetUserPageEntities(pageSize, pageIndex, out total, true);
             var result = new { pageData = pageInfo, total = total };
@@ -415,7 +415,7 @@ namespace XiaoQi.Study.API.Controllers
         public async Task<IActionResult> SetRoleMenu(RoleMenu_R roleMenu)
         {
             // var tmpData = _EFCoreService.GetRoleMenuByRoleId(roleMenu.RoleId);
-            var tmpData = await _roleMenuService.QueryById(roleMenu.RoleId);
+            var tmpData = await _roleMenuService.GetRoleMenusByRoleId(roleMenu.RoleId); 
             if (tmpData != null)
             {
                 tmpData.SetTime = DateTime.Now;
